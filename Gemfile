@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # sqlite3
-gem 'sqlite3'
+gem 'pg'
 
 #Sinatra driver
 gem 'sinatra'

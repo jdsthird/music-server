@@ -56,5 +56,10 @@ end
 
 get "/player/tracks/:track_id" do
   @track = Track.find(params[:track_id])
-  Omxplayer.instance.open @track.file_location
+  system "pkill omxplayer &"
+  system "omxplayer -o local \'#{@track.file_location}\' &"
+end
+
+get "/player/:action" do
+  system "pkill omxplayer &"
 end

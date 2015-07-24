@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # omxplayer media player
-gem 'omxplayer'
+# gem 'omxplayer', :git => 'https://github.com/nickcampbell18/omxplayer.git'
 
 # sqlite3
 gem 'pg'

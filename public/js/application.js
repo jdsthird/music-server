@@ -8,10 +8,12 @@ $(document).ready(function(){
 
     $(".choice_display").on("click", ".non-terminal", showChoices);
 
-    $(".choice_display").on("click", ".terminal", startSong)
+    $(".choice_display").on("click", ".terminal", startSong);
 
-    // $("#fa-play").on("click", resumeSong);
-    // $("#fa-pause").on("click", pauseSong);
+    $(".control_button").on("click", takeAction);
+
+    // $("#fa-play").on("click", playPause);
+    // $("#fa-pause").on("click", playPause);
     
     // $("#fa-step-backward").on("click", backSong);
     // $("#fa-step-forward").on("click", forwardSong);
@@ -53,8 +55,25 @@ function startSong(event){
 
     var request = $.ajax({
         url: songLink.attr("href"),
-        method: "GET",
-        data: {"song_id": songLink.attr("id")}
+        method: "GET"
     });
 
 }
+
+function takeAction(event){
+    event.preventDefault();
+    var controlButton = $(this);
+    
+    var request = $.ajax({
+        url: "/player/" + controlButton.attr("id")
+    });
+
+}
+
+
+
+
+
+
+
+

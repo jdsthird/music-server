@@ -55,5 +55,6 @@ get "/player/tracks" do
 end
 
 get "/player/tracks/:track_id" do
-  p "This is where we play the song"
+  @track = Track.find(params[:track_id])
+  Omxplayer.instance.open @track.file_location
 end

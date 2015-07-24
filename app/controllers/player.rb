@@ -3,8 +3,7 @@ get "/player" do
 end
 
 get "/player/artists" do
-  @display_category = :artists
-  @artists = Artist.all
+  @artists = Artist.all.order(:name)
 
   if request.xhr?
     erb :_artist_list, layout: false
@@ -13,14 +12,48 @@ get "/player/artists" do
   end
 end
 
+get "/player/artists/:artist_id" do
+  @artist = Artist.find(params[:artist_id])
+  @artists_albums = @artist.albums.order(:name)
+
+  if request.xhr?
+    erb :_artist_album_list, layout: false
+  else
+    erb :main
+  end
+end
+
 get "/player/albums" do
-  @display_category = :albums
   @albums = Album.all
-  erb :main
+
+  if request.xhr?
+    erb :_album_list, layout: false
+  else
+    erb :main
+  end
+end
+
+get "/player/albums/:album_id" do
+  @album = Album.find(params[:album_id])
+  @artist = @album.artist
+  @tracks = @album.tracks.order(:track_number)
+
+  if request.xhr?
+    erb :_album_track_list, layout: false
+  else
+    erb :main
+  end
 end
 
 get "/player/tracks" do
-  @display_category = :tracks
   @tracks = Track.all
-  erb :main
+  if request.xhr?
+    erb :_track_list, layout: false
+  else
+    erb :main
+  end
+end
+
+get "/player/tracks/:track_id" do
+  p "This is where we play the song"
 end

@@ -1,6 +1,6 @@
-<h1>Albums</h1>
+<h1><%= @artist.name %></h1>
 <hr>
 
-<% @albums.each do |album| %>
+<% @artists_albums.each do |album| %>
   <a class="choice_link non-terminal" href="<%= "/player/albums/#{album.id}" %>"><%= album.name %></a>
 <% end %>

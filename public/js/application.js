@@ -4,9 +4,13 @@ $(document).ready(function(){
 
     $("#menu_button").on("click", toggleMenu);
 
-    $(".menu_button").on("click", showChoices)
+    $(".menu_button").on("click", showChoices);
 
-    // $("#fa-play").on("click", playSong);
+    $(".choice_display").on("click", ".non-terminal", showChoices);
+
+    $(".choice_display").on("click", ".terminal", startSong)
+
+    // $("#fa-play").on("click", resumeSong);
     // $("#fa-pause").on("click", pauseSong);
     
     // $("#fa-step-backward").on("click", backSong);
@@ -29,7 +33,7 @@ function toggleMenu(event){
 
 function showChoices(event){
     event.preventDefault();
-    $(".menu").toggle();
+    $(".menu").hide();
     var typeLink = $(this);
 
     var request = $.ajax({
@@ -37,7 +41,20 @@ function showChoices(event){
     });
 
     request.done(function(response){
-        console.log(response);
-        $(".container").append(response);
+        var choiceDisplay = $(".choice_display")
+        choiceDisplay.html("");
+        choiceDisplay.append(response);
     });
+}
+
+function startSong(event){
+    event.preventDefault();
+    var songLink = $(this);
+
+    var request = $.ajax({
+        url: songLink.attr("href"),
+        method: "GET",
+        data: {"song_id": songLink.attr("id")}
+    });
+
 }

@@ -1,5 +1,6 @@
-<div class="choice_display">
-  <% @tracks.each do |track| %>
-    <a class="choice_link" href="<%= "/player/tracks/#{track.id}" %>"><%= "#{track.number} - #{track.name}" %></a>
-  <% end %>
-</div>
+<h1>Songs</h1>
+<hr>
+
+<% @tracks.each do |track| %>
+  <a id="<%= track.id %>"class="choice_link terminal" href="<%= "/player/tracks/#{track.id}" %>"><%= track.name %></a><h2><%= "by #{track.artist.name}" %></h2>
+<% end %>

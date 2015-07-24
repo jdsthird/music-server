@@ -1,5 +1,6 @@
-<div class="choice_display">
-  <% @artists.each do |artist| %>
-    <a class="choice_link" href="<%= "/player/artists/#{artist.id}" %>"><%= artist.name %></a>
-  <% end %>
-</div>
+<h1>Artists</h1>
+<hr>
+
+<% @artists.each do |artist| %>
+  <a class="choice_link non-terminal" href="<%= "/player/artists/#{artist.id}" %>"><%= artist.name %></a>
+<% end %>

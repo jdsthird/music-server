@@ -1,0 +1,7 @@
+<h1><%= @album.name %></h1>
+<h2><%= "by #{@artist.name}" %></h2>
+<hr>
+
+<% @tracks.each do |track| %>
+  <a id="<%= track.id %>" class="choice_link terminal" href="<%= "/player/tracks/#{track.id}" %>"><%= "#{track.track_number} - #{track.name}" %></a>
+<% end %>

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# omxplayer media player
+gem 'omxplayer'
+
 # sqlite3
 gem 'pg'
 

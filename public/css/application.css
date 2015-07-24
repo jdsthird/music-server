@@ -1,0 +1,105 @@
+html {
+    margin: 0 -1px -1px 0;
+    width: 100%;
+/*    height: 1280px;
+*/}
+
+body {
+    background-image: url("/images/treble_clef.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 0;
+    margin: 0 auto;
+    background-color: black;
+
+}
+
+
+.container {
+    margin: 0 auto;
+}
+
+
+/*-------- Header ------------
+*/
+
+header {
+    color: rgba(153, 255, 102, 0.55);
+}
+
+#header_content {
+    padding: 20px;
+    background-color: black;
+}
+
+#logo {
+    font-size: 55px;
+}
+
+#menu_button {
+    float: right;
+}
+
+
+/*---------- Menu ------------*/
+
+.menu {
+    font-size: 55px;
+    width: 300px;
+    position: absolute;
+    right: 0px;
+}
+
+.menu_button {
+    display: block;
+    color: rgba(153, 255, 102, 0.55);
+    border-top: 1px solid rgba(153, 255, 102, 0.55);
+    border-left: 1px solid rgba(153, 255, 102, 0.55); 
+    border-bottom: 1px solid rgba(153, 255, 102, 0.55);
+    padding: 20px 5px;
+    text-decoration: none;
+}
+
+
+
+/*---------- Choice Display -------*/
+
+.choice_display {
+    padding: 0 0 0 200px;
+}
+
+
+.choice_link {
+    background-color: rgba(0, 0, 0, 0.75);
+    font-size: 55px;
+    color: rgba(153, 255, 102, 0.55);
+    display: block;
+    padding: 20px 0;
+    font-variant: bold;
+}
+
+/*---------- Player -----------*/
+
+#player {
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.control_button {
+    color: rgba(153, 255, 102, 0.55);
+    padding: 10px;
+    /*border: 1px dotted rgba(153, 255, 102, 0.55);*/
+}
+
+.fa-10x {
+    font-size: 10em;
+}
+
+footer {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    top: 1080px;
+}

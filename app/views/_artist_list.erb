@@ -1,0 +1,5 @@
+<div class="choice_display">
+  <% @artists.each do |artist| %>
+    <a class="choice_link" href="<%= "/player/artists/#{artist.id}" %>"><%= artist.name %></a>
+  <% end %>
+</div>
